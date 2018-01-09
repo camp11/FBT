@@ -3,7 +3,6 @@ from akad.ttypes import Message
 from .api import LineApi
 from .models import LineModels
 from random import randint
-from bs4 import BeautifulSoup
 
 import json, requests
 
