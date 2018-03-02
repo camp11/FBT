@@ -25,7 +25,7 @@ def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     #print op
     try:
         sendMessage(op.param1, client.getContact(op.param2).displayName + "WELCOME to " + group.name)
-		key = eval(msg.contentMetadata["MENTION"])
+	key = eval(msg.contentMetadata["MENTION"])
         u = key["MENTIONEES"][0]["M"]
         cname = client.getContact(u).displayName
         cmid = client.getContact(u).mid
@@ -65,15 +65,15 @@ while True:
 								rslt = random.choice(pilih)
 								client.sendText(msg.to, str(rslt))
 							try:
-                                    key = eval(msg.contentMetadata["MENTION"])
-                                    u = key["MENTIONEES"][0]["M"]
-                                    a = client.getContact(u).pictureStatus
-                                    if "videoProfile='{" in str(client.getContact(u)):
-                                        client.sendVideoWithURL(receiver, 'http://dl.profile.line.naver.jp/'+a+'/vp.small')
-                                    else:
-                                        client.sendImageWithURL(receiver, 'http://dl.profile.line.naver.jp/'+a)
-                                except Exception as e:
-                                    client.sendText(receiver, str(e))
+									key = eval(msg.contentMetadata["MENTION"])
+									u = key["MENTIONEES"][0]["M"]
+									a = client.getContact(u).pictureStatus
+									if "videoProfile='{" in str(client.getContact(u)):
+										client.sendVideoWithURL(receiver, 'http://dl.profile.line.naver.jp/'+a+'/vp.small')
+									else:
+										client.sendImageWithURL(receiver, 'http://dl.profile.line.naver.jp/'+a)
+									except Exception as e:
+										client.sendText(receiver, str(e))
 							else:
 								pass
 						else:
